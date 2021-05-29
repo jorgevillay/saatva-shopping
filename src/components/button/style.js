@@ -6,7 +6,7 @@ const Container = styled.button`
   text-align: center;
   font-size: 17px;
   border: 1px solid ${props => props.config.border || props.config.background};
-  background: ${props => props.config.background};
+  background-color: ${props => props.config.background};
   color: ${props => props.config.font};
   transition: background 0.5s, color 0.5s;
 
