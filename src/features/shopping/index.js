@@ -11,11 +11,19 @@ const Shopping = () => {
   const { mattresses } = data;
   const firstItem = Object.keys(mattresses)[0];
   const [selectedItem, setSelectedItem] = useState(firstItem);
+  const [shoppingList, setShoppingList] = useState([]);
   const mattressData = mattresses[selectedItem];
+
+  const onClickCart = (item) => {
+    setShoppingList([
+      ...shoppingList,
+      item
+    ]);
+  }
 
   return (
     <>
-      <Header hasShoppingCart />
+      <Header hasShoppingCart shoppingList={shoppingList} />
       <Container>
         <PictureWrapper>
           <img src={`/images/${mattressData.imageFileName}`} alt={mattressData.name} />
@@ -26,7 +34,7 @@ const Shopping = () => {
           <SelectionToggle options={mattresses} selected={selectedItem} onClick={setSelectedItem} />
           <Attribute name={`${mattressData.name} Mattress`} value={mattressData.price} />
           <ReviewRating score={mattressData.reviewRating} />
-          <Button className="cart-button" content="Add to Cart" />
+          <Button className="cart-button" content="Add to Cart" onClickEvent={() => onClickCart(mattressData)} />
         </ShoppingWrapper>
       </Container>
     </>

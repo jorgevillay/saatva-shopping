@@ -1,10 +1,12 @@
 import Container from './style';
 
-const shoppingCart = ({ items = 0 }) => {
+const shoppingCart = ({ items = [] }) => {
+  const itemsCount = items.length;
+
   return (
     <Container>
       <span className="material-icons-outlined">local_shipping</span>
-      <span className="items-badge">{items}</span>
+      <span className="items-badge">{itemsCount}</span>
     </Container>
   );
 }
