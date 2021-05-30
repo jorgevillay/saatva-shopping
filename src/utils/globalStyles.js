@@ -6,6 +6,10 @@ const globalStyles = css`
     font-size: 17px;
     margin: 0;
   }
+
+  h1, h5, h5 {
+    margin: 0;
+  }
 `;
 
 export default globalStyles;

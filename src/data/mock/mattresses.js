@@ -1,4 +1,4 @@
-{
+const data = {
     "mattresses": {
         "classic": {
             "name": "Saatva Classic",
@@ -20,3 +20,5 @@
         }
     }
 }
+
+export default data;
