@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 import colors from '../../utils/colors';
+import sizes from '../../utils/sizes';
 
 export const Container = styled.div`
   background-color: ${colors.background};
   padding: 20px 5% 40px;
   display: flex;
+
+  @media (max-width: ${sizes.tabletEnd}) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const PictureWrapper = styled.div`
@@ -16,6 +21,10 @@ export const PictureWrapper = styled.div`
     height: 350px;
     object-fit: cover;
   }
+
+  @media (max-width: ${sizes.tabletEnd}) {
+    display: none;
+  }
 `;
 
 export const ShoppingWrapper = styled.div`
@@ -23,6 +32,10 @@ export const ShoppingWrapper = styled.div`
 
   h1 {
     margin-bottom: 30px;
+  }
+
+  img {
+    display: none;
   }
 
   h5 {
@@ -36,5 +49,26 @@ export const ShoppingWrapper = styled.div`
 
   .cart-button {
     margin-top: 50px;
+  }
+
+  @media (max-width: ${sizes.tabletEnd}) {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .cart-button {
+      margin-top: 30px;
+    }
   }
 `;

@@ -29,6 +29,7 @@ const Shopping = () => {
         </PictureWrapper>
         <ShoppingWrapper>
           <h1>Choose your mattress</h1>
+          <img src={`/images/${selectedItem.imageFileName}`} alt={selectedItem.name} />
           <h5>Select mattress type</h5>
           <SelectionToggle options={mattresses} selectedItem={selectedItem} onClickEvent={setSelectedItem} />
           <Attribute name={`${selectedItem.name} Mattress`} value={selectedItem.price} />

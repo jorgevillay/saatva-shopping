@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const globalStyles = css`
   body {
     font-family: 'Questrial', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     margin: 0;
   }
 
