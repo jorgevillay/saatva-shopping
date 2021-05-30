@@ -13,18 +13,17 @@ const TOGGLE_STYLE = {
 const SELECTED_STYLE = {
   background: colors.base,
   hoverBackground: colors.base,
-  border: colors.base,
   font: colors.white,
   hoverFont: colors.white
 }
 
-const SelectionToggle = ({ options, selected, onClick }) => {
+const SelectionToggle = ({ options, selectedItem, onClickEvent }) => {
   const content = Object.keys(options).map((item, index) => {
-    const text = options[item].name;
-    const isSelected = selected === item;
-    const config = isSelected ? SELECTED_STYLE : TOGGLE_STYLE;
+    const itemData = options[item];
+    const isSelected = selectedItem === itemData;
+    const colorConfig = isSelected ? SELECTED_STYLE : TOGGLE_STYLE;
 
-    return <Button key={index} content={text} colorConfig={config} onClickEvent={() => onClick(item)} />
+    return <Button key={index} content={itemData.name} colorConfig={colorConfig} onClickEvent={() => onClickEvent(itemData)} />
   });
 
   return (

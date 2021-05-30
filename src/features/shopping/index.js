@@ -10,10 +10,8 @@ import Button from '../../components/button';
 const Shopping = () => {
   const { mattresses } = data;
   const firstItem = Object.keys(mattresses)[0];
-  const [selectedItem, setSelectedItem] = useState(firstItem);
+  const [selectedItem, setSelectedItem] = useState(mattresses[firstItem]);
   const [shoppingList, setShoppingList] = useState([]);
-  const mattressData = mattresses[selectedItem];
-
   const onClickCart = (item) => {
     setShoppingList([
       ...shoppingList,
@@ -26,15 +24,15 @@ const Shopping = () => {
       <Header hasShoppingCart shoppingList={shoppingList} />
       <Container>
         <PictureWrapper>
-          <img src={`/images/${mattressData.imageFileName}`} alt={mattressData.name} />
+          <img src={`/images/${selectedItem.imageFileName}`} alt={selectedItem.name} />
         </PictureWrapper>
         <ShoppingWrapper>
           <h1>Choose your mattress</h1>
           <h5>Select mattress type</h5>
-          <SelectionToggle options={mattresses} selected={selectedItem} onClick={setSelectedItem} />
-          <Attribute name={`${mattressData.name} Mattress`} value={mattressData.price} />
-          <ReviewRating score={mattressData.reviewRating} />
-          <Button className="cart-button" content="Add to Cart" onClickEvent={() => onClickCart(mattressData)} />
+          <SelectionToggle options={mattresses} selectedItem={selectedItem} onClickEvent={setSelectedItem} />
+          <Attribute name={`${selectedItem.name} Mattress`} value={selectedItem.price} />
+          <ReviewRating score={selectedItem.reviewRating} />
+          <Button className="cart-button" content="Add to Cart" onClickEvent={() => onClickCart(selectedItem)} />
         </ShoppingWrapper>
       </Container>
     </>
