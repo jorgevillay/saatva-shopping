@@ -29,6 +29,7 @@ export const Ratings = styled.div`
   .material-icons-outlined {
     font-size: 38px;
     color: ${colors.base};
+    transition: color 0.8s;
 
     &:nth-of-type(${props => `-n + ${props.score}`}) {
       color: ${colors.secondary};

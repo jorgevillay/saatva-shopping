@@ -10,11 +10,21 @@ const Container = styled.button`
   color: ${props => props.config.font};
   transition: background 0.5s, color 0.5s;
   cursor: pointer;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  outline: none;
+  transition: 0.2s all;
 
   &:hover {
     background: ${props => props.config.hoverBackground};
     color: ${props => props.config.hoverFont};
     border-color: ${props => props.config.hoverBorder || props.config.hoverBackground};
+  }
+
+  &:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   }
 `;
 

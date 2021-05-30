@@ -35,7 +35,7 @@ const Container = styled.div`
     text-align: center;
     margin-left: -50px;
     padding: 2px;
-    animation: addItemEffect 2s;
+    animation: addItemEffect 2s infinite ${props => props.enableAnimation ? 'running' : 'paused'};
   }
 `;
 
