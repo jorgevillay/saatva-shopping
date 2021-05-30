@@ -18,6 +18,7 @@ const Shopping = () => {
       <Header hasShoppingCart />
       <Container>
         <PictureWrapper>
+          <img src={`/images/${mattressData.imageFileName}`} alt={mattressData.name} />
         </PictureWrapper>
         <ShoppingWrapper>
           <h1>Choose your mattress</h1>
