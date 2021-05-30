@@ -20,6 +20,7 @@ const Container = styled.div`
   .material-icons-outlined {
     font-size: 40px;
     color: ${colors.base};
+    margin-top: 5px;
   }
 
   .items-badge {
@@ -27,12 +28,13 @@ const Container = styled.div`
     color: ${colors.white};
     height: 20px;
     width: 20px;
-    line-height: 20px;
+    line-height: 22px;
     border-radius: 50%;
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    margin-left: -45px;
+    margin-left: -50px;
+    padding: 2px;
     animation: addItemEffect 2s;
   }
 `;

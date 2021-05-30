@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import data from '../../data/mock/mattresses';
+import ShoppingCartContext from '../../context/shoppingCart';
 import { Container, PictureWrapper, ShoppingWrapper } from './style';
 import Header from '../../components/header';
 import SelectionToggle from '../../components/selectionToggle';
@@ -12,7 +13,7 @@ const Shopping = () => {
   const firstItem = Object.keys(mattresses)[0];
   const [selectedItem, setSelectedItem] = useState(mattresses[firstItem]);
   const [shoppingList, setShoppingList] = useState([]);
-  const onClickCart = (item) => {
+  const addCartItem = (item) => {
     setShoppingList([
       ...shoppingList,
       item
@@ -20,8 +21,8 @@ const Shopping = () => {
   }
 
   return (
-    <>
-      <Header hasShoppingCart shoppingList={shoppingList} />
+    <ShoppingCartContext.Provider value={shoppingList}>
+      <Header hasShoppingCart />
       <Container>
         <PictureWrapper>
           <img src={`/images/${selectedItem.imageFileName}`} alt={selectedItem.name} />
@@ -32,10 +33,10 @@ const Shopping = () => {
           <SelectionToggle options={mattresses} selectedItem={selectedItem} onClickEvent={setSelectedItem} />
           <Attribute name={`${selectedItem.name} Mattress`} value={selectedItem.price} />
           <ReviewRating score={selectedItem.reviewRating} />
-          <Button className="cart-button" content="Add to Cart" onClickEvent={() => onClickCart(selectedItem)} />
+          <Button className="cart-button" content="Add to Cart" onClickEvent={() => addCartItem(selectedItem)} />
         </ShoppingWrapper>
       </Container>
-    </>
+    </ShoppingCartContext.Provider>
   );
 }
 
