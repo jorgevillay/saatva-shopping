@@ -1,6 +1,6 @@
 import Container from './style';
 
-const shoppingCart = ({ items }) => {
+const shoppingCart = ({ items = 0 }) => {
   return (
     <Container>
       <span className="material-icons-outlined">local_shipping</span>

@@ -2,15 +2,28 @@ import styled from '@emotion/styled';
 import colors from '../../utils/colors';
 
 const Container = styled.div`
+  width: 40px;
   padding-left: 8px;
+
+  @keyframes addItemEffect {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }
 
   .material-icons-outlined {
     font-size: 40px;
-    color: ${colors.cart};
+    color: ${colors.base};
   }
 
   .items-badge {
-    background: ${colors.badge};
+    background: ${colors.branding};
     color: ${colors.white};
     height: 20px;
     width: 20px;
@@ -19,7 +32,8 @@ const Container = styled.div`
     display: inline-block;
     vertical-align: top;
     text-align: center;
-    margin-left: -45px; 
+    margin-left: -45px;
+    animation: addItemEffect 2s;
   }
 `;
 
