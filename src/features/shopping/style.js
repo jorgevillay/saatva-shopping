@@ -31,7 +31,7 @@ export const ShoppingWrapper = styled.div`
   width: 45%;
 
   h1 {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   img {
@@ -40,11 +40,12 @@ export const ShoppingWrapper = styled.div`
 
   h5 {
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
 
   .selection-toggle {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .cart-button {
@@ -57,18 +58,24 @@ export const ShoppingWrapper = styled.div`
     img {
       display: block;
       width: 100%;
-      height: 185px;
+      height: 260px;
       object-fit: cover;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     h5 {
-      font-size: 16px;
       margin-bottom: 10px;
     }
 
     .cart-button {
       margin-top: 30px;
+    }
+  }
+
+  @media (max-width: ${sizes.mobileEnd}) {
+    img {
+      height: 185px;
+      margin-bottom: 10px;
     }
   }
 `;
