@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const Container = styled.div`
   display: flex;
 
-  button:not(:first-child) {
+  button:not(:first-of-type) {
     border-left: none;
   }
 `;
