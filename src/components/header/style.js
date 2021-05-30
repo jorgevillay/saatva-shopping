@@ -6,6 +6,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 15px 5%;
   border-bottom: 1px solid ${colors.base};
+  background-color: ${colors.white};
 
   img {
     width: 100px;

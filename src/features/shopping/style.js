@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
-import colors from '../../utils/colors';
 import sizes from '../../utils/sizes';
 
 export const Container = styled.div`
-  background-color: ${colors.background};
-  padding: 20px 5% 40px;
+  padding: 20px 5% 0;
   display: flex;
 
   @media (max-width: ${sizes.tabletEnd}) {
