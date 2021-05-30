@@ -9,6 +9,7 @@ const Container = styled.button`
   background-color: ${props => props.config.background};
   color: ${props => props.config.font};
   transition: background 0.5s, color 0.5s;
+  cursor: pointer;
 
   &:hover {
     background: ${props => props.config.hoverBackground};

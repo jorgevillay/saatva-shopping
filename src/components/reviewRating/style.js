@@ -11,8 +11,10 @@ export const Container = styled.div`
 `;
 
 export const Ratings = styled.div`
+  display: flex;
+  
   .material-icons-outlined {
-    font-size: 40px;
+    font-size: 35px;
     color: ${colors.base};
 
     &:nth-of-type(${props => `-n + ${props.score}`}) {

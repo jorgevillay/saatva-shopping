@@ -8,9 +8,9 @@ const DEFAULT_CONFIG = {
   hoverFont: colors.white
 }
 
-const Button = ({ content = 'Click me', colorConfig, onClickEvent }) => {
+const Button = ({ className, content = 'Click me', colorConfig, onClickEvent }) => {
   return (
-    <Container config={colorConfig || DEFAULT_CONFIG} onClick={onClickEvent}>
+    <Container className={className} config={colorConfig || DEFAULT_CONFIG} onClick={onClickEvent}>
       {content}
     </Container>
   );
