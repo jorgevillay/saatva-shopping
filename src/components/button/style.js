@@ -13,6 +13,7 @@ const Container = styled.button`
   &:hover {
     background: ${props => props.config.hoverBackground};
     color: ${props => props.config.hoverFont};
+    border-color: ${props => props.config.hoverBorder || props.config.hoverBackground};
   }
 `;
 
